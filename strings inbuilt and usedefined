@@ -1,0 +1,390 @@
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+void menu();
+void copy();
+void uscopy();
+void length();
+void uslength();
+void compare();
+void uscompare();
+void concate();
+void usconcate();
+void reverse();
+void usreverse();
+main()
+{ 
+    printf("\t\t\t[**********STRING*********]\n\n");
+	menu();
+}
+void menu()
+{     
+    int no,n1;
+	printf("\n\t\t\t[--------MENU-------]\n\n");
+	printf("\n\t\t\t\t\t\t1....INBULIT FUNCTION OF STRINGS");
+	printf("\n\t\t\t\t\t\t2....USERDEFINE FUNCTION OF STRINGS");
+	printf("\n\t\t\t\t\t\t2....EXIT\n\n");
+	printf("\n\t\t\t[----------------]");
+	printf("\nSELECT YOUR CHOICE:");
+	scanf("%d",&no);
+	if(no==1)
+	{    
+	    	printf("\n\t\t\t[--INBULIT FUNCTION OF STRING---]\n\n");
+		printf("\n\t\t\t\t\t\t1....LENGTH");
+		printf("\n\t\t\t\t\t\t2....COPY");
+		printf("\n\t\t\t\t\t\t3....COMPARE");
+		printf("\n\t\t\t\t\t\t4....CONCATE");
+		printf("\n\t\t\t\t\t\t5....REVERSE");
+		printf("\n\t\t\t\t\t\t6....GO TO MENU\n\n");
+		printf("\n\t\t\t[----------------------]");
+		printf("\nSELECT YOUR CHOICE:");
+		scanf("%d",&n1);
+		switch(n1)
+		{
+			case 1:
+			          length();
+			          break;
+			case 2: copy();
+			        break;
+			case 3: compare();
+			        break;
+			case 4: concate();
+			        break;
+			case 5: reverse();
+			        break;
+			case 6: 
+			        
+			        break;
+		}
+		
+		
+	}
+	if(no==2)
+	{    
+	    printf("\n\t\t\t[---USER DEFINE FUNCTION OF STRINGS------]\n\n");
+		printf("\n\t\t\t\t\t\t1....LENGTH");
+		printf("\n\t\t\t\t\t\t2....COPY");
+		printf("\n\t\t\t\t\t\t3....COMPARE");
+		printf("\n\t\t\t\t\t\t4....CONCATE");
+		printf("\n\t\t\t\t\t\t5....REVERSE");
+		printf("\n\t\t\t\t\t\t6....GO TO MENU\n\n");
+		printf("\n\t\t\t[----------------------]");
+		printf("\nSELECT YOUR CHOICE:");
+		scanf("%d",&n1);
+		switch(n1)
+		{
+			case 1:
+			          uslength();
+			          break;
+			case 2: uscopy();
+			        break;
+			case 3: uscompare();
+			        break;
+			case 4: usconcate();
+			        break;
+			case 5: usreverse();
+			        break;
+			case 6: 
+			        
+			        break;
+		}
+		
+		
+	}
+	
+	
+}
+void length()
+{   char ch;
+  do{
+    int i,length;
+	char len[30];
+	printf("\n\t\t\t[----------------LENGTH--------------------]\n\n");
+	printf("\t\t\t\t\t\tENTER TEXT:");
+	
+	scanf("%s",&len[i]);
+	length=strlen(len);
+	printf("\t\t\t\t\t\tTHE LENGTH OF THE TEXT IS:%d\n\n",length);
+	printf("\n\t\t\t[------------------------------------------]");
+	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+     }while((ch=='y')||(ch=='Y'));
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+
+	
+}
+void copy()
+{   
+    char ch;
+    do{
+	
+    char text1[30],text2[30];
+	printf("\n\t\t\t[------------------------COPY-----------------]\n\n");
+	printf("\t\t\t\t\t\tENTER TEXT:");
+	fflush(stdin);
+    gets(text1);
+	strcpy(text2,text1);
+	printf("\n\t\t\t\t\tYOU ENTER TEXT:%s",text1);
+	printf("\n\t\t\t\t\tCOPYIED TEXT:%s\n",text2);
+	printf("\n\t\t\t[--------------------------------]");
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+    }while((ch=='y')||(ch=='Y'));
+    if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+void compare()
+{   
+    char ch;
+    do{
+	
+    char text1[20],text2[20];
+	printf("\n\t\t\t[-------COMPARE--------------]\n\n");
+	printf("\t\t\t\t\t\tENTER FIRST TEXT:");
+	fflush(stdin);
+    gets(text1);
+    printf("\n\t\t\t\t\t\tENTER SECOND TEXT:");
+	fflush(stdin);
+    gets(text2);
+    if(strcmp(text1,text2))
+    {
+       printf("\n\t\t\t\t\t\tTHE TEXT ARE NOT SAME");	
+	}
+	else
+	{
+	     printf("\n\t\t\t\t\t\tTHE TEXT ARE  SAME");	
+	}
+	printf("\n\t\t\t[-------------------------------------]");
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+   }while((ch=='y')||(ch=='Y'));
+    if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+void concate()
+{   
+   char ch;
+   do{
+   char text1[20],text2[20],cat[30];
+	printf("\n\t\t\t[-------------CONCATE---------------]\n\n");
+	printf("\t\t\t\t\t\tENTER FIRST TEXT:");
+	fflush(stdin);
+    gets(text1);
+    printf("\n\t\t\t\t\t\tENTER SECOND TEXT:");
+	fflush(stdin);
+    gets(text2);
+	strcat(text1,text2);
+	
+	printf("\n\t\t\t\t\t\tCOMBINED TEXT IS:%s\n",text1);
+	printf("\n\t\t\t[--------------------------------------------]");	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+   }while((ch=='y')||(ch=='Y'));
+    if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+void reverse()
+{   char ch;
+	do{
+	char text1[30];
+	printf("\n\t\t\t[---------------------REVERSE---------------------]\n\n");
+	printf("\t\t\t\t\t\tENTER FIRST TEXT:");
+	fflush(stdin);
+    gets(text1);
+    strrev(text1);
+    printf("\n\t\t\t\t\t\tTHE REVERSE TEXT IS:%s\n",text1);
+	printf("\n\t\t\t[------------------------------------------]");	
+    printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+   }while((ch=='y')||(ch=='Y'));
+    if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+    	
+}
+void uslength()
+{  
+    char ch;
+	do{
+	char ch1,text[50];
+	int i;
+	printf("\n\t\t\t[--------------LENGTH------------------]\n\n");
+	printf("\t\t\t\t\t\tENTER TEXT:");
+	i=0;
+	fflush(stdin);
+	while((ch1=getchar())!='\n')
+	{
+		text[i]=ch1;
+		i++;
+	}
+	text[i]='\0';
+	printf("\t\t\t\t\t\tTHE LENGTH OF THE TEXT IS:%d\n\n",i);
+	printf("\n\t\t\t[----------------------------------------]");
+	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+     }while((ch=='y')||(ch=='Y'));
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+	
+}
+void uscopy()
+{
+  char ch;
+	do{
+	char ch1,text[50],text2[50];
+	int i;
+	printf("\n\t\t\t[------------------COPY-----------]\n\n");
+	printf("\t\t\t\t\t\tENTER  TEXT:");
+	i=0;
+	fflush(stdin);
+	while((ch1=getchar())!='\n')
+	{   
+	    
+		text[i]=ch1;
+		text2[i]=text[i];
+		i++;
+	}
+	text[i]='\0';
+	printf("\n\t\t\t\t\t\tYOU ENTER TEXT:%s",text);
+	printf("\n\t\t\t\t\t\tCOPYIED TEXT:%s\n",text2);
+	printf("\n\t\t\t[----------------------------------]");
+	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+     }while((ch=='y')||(ch=='Y'));
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }	
+}
+void uscompare()
+{
+	char ch;
+	do{
+	char ch1,text1[50],text2[50];
+	int i,j,c;
+	printf("\n\t\t\t[--------------- COMPARE---------------]\n\n");
+	printf("\t\t\t\t\t\tENTER FIRST TEXT:");
+	scanf("%s",text1);
+	printf("\t\t\t\t\t\tENTER SECOND TEXT:");
+	scanf("%s",text2);
+	i=0;
+	c=0;
+	
+	while((text1[i]!='\0')||(text2[i]!='\0'))
+	{
+		if(text1[i]!=text2[i])
+		
+		  c++;
+		  i++;
+		
+		
+	}
+	if(c==0)
+	{
+           printf("\n\t\t\t\t\t\tTHE TEXT ARE  SAME");	
+	}
+	else
+	{
+	     printf("\n\t\t\t\t\t\tTHE TEXT ARE NOT  SAME");	
+	}
+	
+	
+	printf("\n\t\t\t[-----------------------]");
+	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+     }while((ch=='y')||(ch=='Y'));
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+void usconcate()
+{
+	char ch;
+	do{
+	char text1[50],text2[50];
+	int i,j;
+	printf("\n\t\t\t[------------CONCATE-------------]\n\n");
+	printf("\t\t\t\t\t\tENTER FIRST TEXT:");
+	scanf("%s",text1);
+	printf("\t\t\t\t\t\tENTER SECOND TEXT:");
+	scanf("%s",text2);
+	i=0;
+	while(text1[i]!='\0')
+	i=i+1;
+	for(j=0;text2[j]!='\0';j++)
+	{
+		text1[i]=text2[j];
+		i=i+1;
+	}
+	text1[i]='\0';
+	
+	printf("\t\t\t\t\t\tTHE COMBINE TEXT:%s\n\n",text1);
+	printf("\n\t\t\t[-----------------]");
+	
+	printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	fflush(stdin);
+	scanf("%c",&ch);
+     }while((ch=='y')||(ch=='Y'));
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+void usreverse()
+{
+	 char ch;
+   do{
+   
+
+   char str [58],temp;
+   int i,length;
+   printf("\n enter string");
+   scanf("%s",str);
+  
+   length=strlen(str)-1;
+   for (i=0;i<strlen(str)/2;i++)
+   {
+   	
+   	temp=str[i];
+   	str[i]=str[length];
+   	str[length--]=temp;
+   	
+    		
+   	} printf("\n Reverse string is %s",str);
+	   printf("\n\n\nDO YOU WANT TO CONTINUE PRESS 'Y' AND 'N' FOR MENU:");
+	   fflush(stdin);
+   		scanf("%c",&ch);
+	  } while((ch=='y')||(ch=='Y'));
+	  
+     if((ch=='n')||(ch=='N'))
+     {
+     	menu();
+	 }
+}
+	 
+    
